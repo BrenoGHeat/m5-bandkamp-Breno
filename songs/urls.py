@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    path("api/albums/<int:album_id>/songs/", views.SongView.as_view()),
+    path("albums/<int:album_id>/songs/", views.SongView.as_view()),
 ]
