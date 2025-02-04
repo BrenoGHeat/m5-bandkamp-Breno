@@ -53,7 +53,11 @@ MY_APPS = [
     "songs",
 ]
 
-INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + MY_APPS
+DRF_APP = [
+    "drf_spectacular"
+]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + DRF_APP + MY_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -143,6 +147,16 @@ REST_FRAMEWORK = {
 
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 2,
+
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "API de gerenciamento de usuários,albuns e músicas",
+    "DESCRIPTION": "Gerenciamento de usuários,albuns e músicas",
+    "VERSION": "1.0.0",
+    "SERVER_INCLUDE_SCHEMA": False,
 }
 
 # Internationalization
